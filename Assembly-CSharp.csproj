@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EnemyMovement.cs" />
+     <Compile Include="Assets\HUD.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
+     <Compile Include="Assets\TurretAim.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Snarvei/Program/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
