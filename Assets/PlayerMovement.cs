@@ -23,13 +23,13 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate (){
 		float horizontal = Input.GetAxis ("Horizontal");
 
-		RaycastHit hit;
-		if (Physics2D.BoxCast (transform.position, rayBox, 0.0f, -transform.up, 0.12f)) {
+		RaycastHit2D hit = Physics2D.BoxCast (transform.position, rayBox, 0.0f, -transform.up, 0.12f, ~1<<5);
+		if (hit) {
 			Vector2 movement = new Vector2 (horizontal * playerSpeed, body.velocity.y);
 			if (body.velocity.x < maxSpeed) {
 				body.AddForce (movement);
 			}
-			if (Input.GetKey ("w")) {
+			if (Input.GetKey ("w") && hit.transform.tag == "Ground") {
 				body.AddForce (transform.up * jumpStrength);
 			}
 		} else {
